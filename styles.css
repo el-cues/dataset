@@ -1,0 +1,366 @@
+/* Grundlegende Stile für die gesamte Website */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #F5F5F5;
+    overflow-x: hidden;
+    margin-left: 200px; /* Add left margin equal to the navbar width */
+    box-sizing: border-box; /* Ensure padding is included in the width */
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header-Stile */
+header {
+    background-color: #F000000;
+    color: white;
+    padding: 10px 0;
+    text-align: left;
+}
+
+header img {
+    max-width: auto; /* Ensure the image scales with the header */
+    height: 50%;    /* Maintain the aspect ratio of the image */
+    display: block;  /* Remove any extra space below the image */
+    margin: 0 auto;  /* Center the image */
+}
+
+header h1 {
+    font-size: 2em;
+    color: #333; /* Dark gray color for the text */
+}
+
+/* Full-width image container */
+.full-width-image {
+    width: 80%; /* Set the width to 80% of the viewport */
+    max-width: 1200px; /* Optional: Set a max-width for larger screens */
+    margin: 0 auto; /* Center the container horizontally */
+    position: relative; /* Establish stacking context if needed */
+    z-index: 1; /* Ensure it is below other elements with higher z-index */
+    margin-top: 10px; /* Adjust based on the height of the navigation bar */
+    Margin-bottom: 40px;
+    Margin-top: 40px;
+}
+
+.full-width-image img {
+    width: 100%; /* Make the image fill the container width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove any bottom space caused by inline image */
+}
+
+/* Navigation-Stile */
+nav {
+    display: flex;
+    flex-direction: column; /* Change direction to column for vertical layout */
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #FFFFFF;
+    border-radius: 15px; /* Rounded corners */
+    Margin: 5px;
+    Margin-top: 20px;
+    Margin-bottom: 20px;
+    padding: 20px 10px; /* Adjust padding to fit the vertical layout */
+    Gap: 40px;
+    position: fixed;
+    width: 250px; /* Adjust the width to your needs */
+    height: 95%; /* Full height for vertical navigation */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+    border-right: 1px solid #e0e0e0; /* Light border color */
+
+
+
+}
+
+.nav-left .logo {
+    width: 180px; /* Keep the logo size as needed */
+    margin-bottom: 20px; /* Add space below the logo */
+    
+
+
+}
+
+.nav-center {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    gap: 10px;
+    width: 100%;
+    justify-content: center; /* Align links to the start */
+    align-items: center; /* Center align links */
+    flex-grow: 1; /* Use available vertical space */
+}
+
+.nav-link {
+    color: black;
+    text-decoration: none;
+    font-size: 24px;
+    width: 100%;
+    text-align: center; /* Align text to the left within the link */
+    padding: 10px 0;
+}
+
+.nav-link.active {
+    font-weight: bold; /* Or use 700 for a specific weight */
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.nav-link.project.active {
+    background-color: #4f559d; /* Tomatenrot für Home */
+}
+
+.nav-link.data.active {
+    background-color: #b2e965; /* Grün für About */
+}
+
+.nav-link.selector.active {
+    background-color: #a72b44; /* Blau für Services */
+}
+
+.nav-link.studies.active {
+    background-color: #6db7b3; /* Gelb für Contact */
+}
+
+.nav-link.project:hover {
+    background-color: rgba(79, 85, 157, 0.5); /* Transparent version of #4f559d */
+}
+
+.nav-link.data:hover {
+    background-color: rgba(178, 233, 101, 0.5); /* Transparent version of #b2e965 */
+}
+
+.nav-link.selector:hover {
+    background-color: rgba(167, 43, 68, 0.5); /* Transparent version of #a72b44 */
+}
+
+.nav-link.studies:hover {
+    background-color: rgba(109, 183, 179, 0.5); /* Transparent version of #6db7b3 */
+}
+
+.nav-right {
+    margin-top: auto; /* Push the contact button to the bottom */
+    width: 100%; /* Ensure the button spans the width */
+    text-align: center; /* Center align the button */
+}
+
+.nav-right .contact-button {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    display: block; /* Make the button block-level to span the width */
+    width: 80%; /* Button width (adjust as needed) */
+    margin: 0 auto; /* Center the button horizontally */
+}
+
+.nav-right .contact-button:hover {
+    background-color: #e0b90f;
+}
+
+@media (max-width: 768px) {
+    nav {
+        width: 150px; /* Adjust for smaller screens */
+    }
+
+    .nav-link {
+        font-size: 20px;
+    }
+
+    .nav-right .contact-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@keyframes fadeInFromBottom {
+    0% {
+        transform: translateY(30px); /* Start slightly below the final position */
+        opacity: 0; /* Fully transparent */
+    }
+    100% {
+        transform: translateY(0); /* End in its final position */
+        opacity: 1; /* Fully opaque */
+    }
+}
+
+
+
+/* Main-Content-Stile */
+main {
+    padding: 20px;
+}
+
+Main h2 {
+    font-size: 48px;
+    Margin-bottom: 10px;
+    Margin-top: 0px;
+
+}
+
+section {
+    scroll-margin-top: 60px; /* Adjust this value based on your navigation bar height */
+}
+
+#contact {
+    padding: 30px 20px; /* Reduced padding for the contact section */
+    min-height: 20vh;   /* Reduced height for the contact section */
+    background-color: #c0c0c0;
+}
+
+.section-with-bg {
+    background-color: #FFFFFF; /* White background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px; /* Padding inside the section */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow for depth */
+    margin: 20px; /* Adds space outside the section */
+    opacity: 0; /* Initially invisible */
+    animation: flyIn 3s ease-out forwards; /* Apply the animation */
+    min-height: 500px; /* Adjust this value as needed */
+
+}
+
+section-with-bg.visible {
+    transition: opacity 1s ease-in-out 0.5s; /* Add a 0.5s delay */
+}
+
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.text-block {
+    flex: 1;
+    max-width: 45%;
+}
+
+.text-block p {
+    Font-size: 22px
+}
+
+.text-block-right {
+    flex: 1;
+    max-width: 45%;
+    background-color: #f0f0f0; /* Background color for visibility */
+    padding: 20px; /* Padding inside the text block */
+    border-radius: 5px; /* Rounded corners */
+    
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(3, 1fr); /* 3 rows */
+    gap: 10px; /* Space between cards */
+    width: 480px; /* Total width of the grid */
+    height: 480px; /* Total height of the grid */
+}
+
+.flip-card {
+    background-color: transparent;
+    perspective: 1000px; /* Perspective for 3D effect */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    transform-origin: center; /* Ensure flip rotates around the center */
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px; /* Rounded corners */
+    border: 2px solid black; /* Black border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    box-shadow: none; /* Remove shadow */
+    box-sizing: border-box; /* Ensure padding and border are included in width/height */
+}
+
+.flip-card-front {
+    background-color: #f8f8f8;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: #333;
+    color: white;
+    transform: rotateY(180deg);   
+}
+
+.flip-card-front p{
+    font-weight: bold; /* Bold text */
+    font-size: 16px; /* Text size */
+    text-align: center; /* Center text */
+    line-height: 1.2; /* Line spacing */
+    margin: 0; /* Remove margins */
+    padding: 0 10px; /* Horizontal padding */
+    word-break: break-word; /* Break long words */
+}
+
+
+.flip-card-back p {
+    Font-style: italic; 
+    font-size: 14px; /* Text size */
+    text-align: center; /* Center text */
+    line-height: 1.2; /* Line spacing */
+    margin: 0; /* Remove margins */
+    padding: 0 10px; /* Horizontal padding */
+    word-break: break-word; /* Break long words */
+}
+.flip-card:hover .flip-card-inner,
+.flip-card-inner.flipped {
+    transform: rotateY(180deg);
+}
+
+.html-widget {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    align-items: flex-start; /* Align the iframe at the top */
+    justify-content: flex-end; /* Align the widget to the right */
+    position: relative;
+}
+
+.responsive-iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Ensure a square aspect ratio */
+    border: none;
+}
+
+/* Footer-Stile */
+footer {
+    background-color: #F000000;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+    
+    bottom: 0;
+    width: 100%;
+}
