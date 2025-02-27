@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>License Selection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    
+</head>
+<body>
+    <!-- Back Button -->
+    <div class="container">
+
+    <a href="index.html" class="back-button">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z"/>
+        </svg>
+        Back
+    </a>
+    </div>
+    
+    <div class="full-width-image">
+        <img src="ELCUES_logo_black_text.webp" alt="Full Width Image">
+    </div>
+
+    <!-- Main Container -->
+     
+    <div class="licensecontainer">
+        <h1>Select your license type</h1>
+
+        <!-- Buttons for License Selection -->
+        <div class="button-group">
+            <button class="research-btn" id="researchButton">Research License</button>
+            <button class="commercial-btn" id="commercialButton">Commercial License</button>
+        </div>
+
+        <div id="researchInstructions" class="instructions" hidden>
+            <p><i>This license is intended for non-commercial research purposes.</i></p>
+        </div>
+
+        <!-- Instructions for Commercial License -->
+        <div id="commercialInstructions" class="instructions" hidden>
+            <p><i>This license is intended for business or commercial use.</i></p>
+        </div>
+
+        <!-- Next Button -->
+        <button class="next-button" id="nextButton" disabled hidden>Please select your license!</button>
+    </div>
+
+    <!-- JavaScript for Redirection -->
+    <script>
+        // Variables to track the user's selection
+        let selectedLicense = '';
+
+        // Buttons
+        const researchButton = document.getElementById('researchButton');
+        const commercialButton = document.getElementById('commercialButton');
+        const nextButton = document.getElementById('nextButton');
+
+        // Event listeners for license selection
+        researchButton.addEventListener('click', function () {
+            selectedLicense = 'research';
+            
+			// Highlight the selected button
+			researchButton.style.outline = '3px solid #218838';
+			commercialButton.style.outline = 'none';
+            researchInstructions.style.display = 'block';
+            commercialInstructions.style.display = 'none';
+
+			// Enable the Next button
+			nextButton.disabled = false;
+            nextButton.hidden = false;
+
+			// Change Next button text (optional)
+			nextButton.innerText = 'Continue (Research)';
+            
+		});
+
+		commercialButton.addEventListener('click', function () {
+			selectedLicense = 'commercial';
+
+			// Highlight the selected button
+			commercialButton.style.outline = '3px solid #0056b3';
+			researchButton.style.outline = 'none';
+            researchInstructions.style.display = 'none';
+            commercialInstructions.style.display = 'block';
+
+
+			// Enable the Next button
+			nextButton.disabled = false;
+            nextButton.hidden = false;
+
+			// Change Next button text (optional)
+			nextButton.innerText = 'Continue (Commercial)';
+		});
+
+		// Event listener for the Next button
+		nextButton.addEventListener('click', function () {
+			if (selectedLicense === 'research') {
+				window.location.href = 'research.html'; // Redirect to research.html
+			} else if (selectedLicense === 'commercial') {
+				window.location.href = 'commercial.html'; // Redirect to commercial.html
+			}
+		});
+    
+	</script>
+</body>
+</html>
