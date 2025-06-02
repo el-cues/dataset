@@ -538,3 +538,108 @@ ol li {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* --- Responsive Design (Mobile First) --- */
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block; /* Show hamburger menu on small screens */
+    }
+
+    .nav-content {
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px; /* Adjust based on your nav height */
+        left: 0;
+        background-color: #333;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+
+    .nav-content.active {
+        max-height: 300px; /* Adjust to fit all links */
+    }
+
+    .nav-center {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-link, .contact-button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #575757; /* Separator for menu items */
+    }
+
+    .nav-right {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .contact-button {
+        border-bottom: none;
+        margin-top: 10px;
+    }
+
+    /* General Layout Adjustments */
+    .flex-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text-block {
+        padding-right: 0; /* Remove padding for mobile */
+        min-width: unset; /* Remove min-width restriction */
+        width: 100%; /* Take full width */
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* Single column for flip cards on mobile */
+        width: 100%; /* Ensure grid takes full width */
+    }
+
+    .html-widget iframe {
+        height: 400px; /* Reduce iframe height for mobile */
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .section-with-bg {
+        padding: 20px;
+    }
+}
+
+/* Further adjustments for very small screens (e.g., older phones) */
+@media (max-width: 480px) {
+    .full-width-image img {
+        width: 90%; /* Make image slightly smaller on very small screens */
+    }
+
+    .section-with-bg {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .text-block p {
+        font-size: 1em;
+    }
+
+    .flip-card {
+        height: 120px; /* Smaller flip cards */
+    }
+
+    .flip-card-front, .flip-card-back {
+        font-size: 0.9rem;
+    }
+}

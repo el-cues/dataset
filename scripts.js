@@ -101,3 +101,8 @@ document.addEventListener("DOMContentLoaded", function() {
         startAutoFlipping();
     }, 0); // Initial delay before auto-flipping starts
 });
+
+// JavaScript for hamburger menu toggle
+      document.querySelector('.hamburger-menu').addEventListener('click', function() {
+          document.querySelector('.nav-content').classList.toggle('active');
+      });
