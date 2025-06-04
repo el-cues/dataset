@@ -28,6 +28,30 @@ document.querySelectorAll('.section-to-animate').forEach(section => {
   observer.observe(section);
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navContent = document.querySelector('.nav-content');
+
+    if (hamburgerMenu && navContent) {
+        hamburgerMenu.addEventListener('click', function() {
+            navContent.classList.toggle('active');
+        });
+    }
+
+    // Optional: Close mobile menu when a link is clicked
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (navContent.classList.contains('active')) {
+                navContent.classList.remove('active');
+            }
+        });
+    });
+
+    // AOS Initialization
+    AOS.init();
+});
+
 document.addEventListener("DOMContentLoaded", function() {
     const cards = document.querySelectorAll(".flip-card-inner");
     let currentIndex = 0;
@@ -102,7 +126,3 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 0); // Initial delay before auto-flipping starts
 });
 
-// JavaScript for hamburger menu toggle
-      document.querySelector('.hamburger-menu').addEventListener('click', function() {
-          document.querySelector('.nav-content').classList.toggle('active');
-      });
